@@ -1,4 +1,4 @@
-const connectToDatabase = require("../utils/db");
+const connectToDatabase = require("../../utils/db");
 const Tarea = require("./tareas");
 
 module.exports = async (req, res) => {
