@@ -1,8 +1,15 @@
-const connectToDatabase = require("../../utils/db");
-const Tarea = require("./tareas");
+const connectToDatabase = require("../utils/db");
+const Tarea = require("../models/tareas");
 
 module.exports = async (req, res) => {
     await connectToDatabase();
+
+    if (req.url === '/') {
+        res.status(200).send('Bienvenido a la API de Tareas');
+      } else {
+        res.status(404).send('Ruta no encontrada');
+      }
+
 
     if (req.method === "GET") {
         // Obtener todas las tareas
